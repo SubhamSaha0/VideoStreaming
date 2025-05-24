@@ -1,1 +1,5 @@
-console.log("hi");
+import dotenv from "dotenv";
+import conncetDB from "./config/db.js";
+
+dotenv.config();
+conncetDB()
