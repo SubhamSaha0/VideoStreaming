@@ -4,8 +4,8 @@ QuickBlog is a full-stack, modern blogging platform that enables seamless creati
 
 ## 🚀 Live Demo
 
-- [Main Application]([https://your-quickblog-demo-link.com](https://quickblog-frontend.onrender.com/)) <!-- Replace with your actual demo link -->
-
+- [Frontend]([https://quickblog-frontend.onrender.com/]) 
+- [Backend]([https://quickblog-aao4.onrender.com/])
 ---
 
 ## 🖼️ Screenshots
