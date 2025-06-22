@@ -12,13 +12,15 @@ Tomato is a full-stack food ordering platform enabling customers to browse menus
 
 ## 🖼️ Screenshots
 
+### Customer
 ![Customer Home](https://github.com/user-attachments/assets/494ed92c-5952-4232-8529-58d67bf3082e)
 ![Customer explore menu](https://github.com/user-attachments/assets/c888dd86-3985-45fe-830c-adea9d229090)
 ![Customer cart](https://github.com/user-attachments/assets/2e2788de-3c66-42c1-a100-156ed7e1601e)
 ![Customer track orders](https://github.com/user-attachments/assets/36a74fa6-7781-4236-83e2-e36b01b69edd)
 
+### Admin
 ![admin add item](https://github.com/user-attachments/assets/59ab1e3d-83a5-4ac6-93b1-fa14367d8f4d)
-![Admin list items](https://github.com/user-attachments/assets/9798ee85-b440-4a0d-97ec-2ad93825990b)
+![image](https://github.com/user-attachments/assets/7ce86467-6c87-4e15-9ba7-9dbfb77c7206)
 ![Admin handle orders](https://github.com/user-attachments/assets/433dd502-ce1f-4488-aa1a-cba3a1f815ab)
 
 
