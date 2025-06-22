@@ -4,11 +4,22 @@ QuickBlog is a full-stack, modern blogging platform that empowers users to creat
 
 ## 🚀 Live Demo
 
-- [Main Application](https://your-quickblog-demo-link.com) <!-- Replace with your actual demo link -->
+- [Main Application]([https://your-quickblog-demo-link.com](https://quickblog-frontend.onrender.com/)) <!-- Replace with your actual demo link -->
 
 ---
 
 ## 🖼️ Screenshots
+
+### User
+![User home](https://github.com/user-attachments/assets/ccc2df28-7c4c-402e-bb8e-a2e24979c4ea)
+![Read a blog](https://github.com/user-attachments/assets/e96c74fc-93d4-47d6-b88b-df4dfbd95d4d)
+![View and add a comment](https://github.com/user-attachments/assets/aed007e9-595c-4244-a93c-aea3305a1593)
+
+### Admin
+![image](https://github.com/user-attachments/assets/4009dd80-68d6-41cb-868d-c7d748559e48)
+![image](https://github.com/user-attachments/assets/1d1a0ecc-b8d6-4297-93cd-0dbcbd0f7ad7)
+![image](https://github.com/user-attachments/assets/c1a409a1-0b7a-49a5-b37d-629500ae1ece)
+![image](https://github.com/user-attachments/assets/bc5a48dd-5903-4951-84ac-2bbdfa9e63be)
 
 <!-- Add your screenshots here -->
 <!-- Example:
@@ -23,7 +34,7 @@ QuickBlog is a full-stack, modern blogging platform that empowers users to creat
 
 | Layer        | Technology                |
 | ------------ | ------------------------ |
-| Frontend     | React.js, CSS/Styled     |
+| Frontend     | React.js, Tailwind CSS     |
 | Backend      | Node.js, Express.js      |
 | Database     | MongoDB (Mongoose)       |
 | Auth         | JWT Tokens               |
@@ -38,12 +49,12 @@ QuickBlog is a full-stack, modern blogging platform that empowers users to creat
 - Register and log in securely
 - Create, edit, and publish blog posts
 - Rich text editor for content creation
-- Browse and search posts by category or author
-- Comment on and like posts
+- Browse and search posts by category 
+- Comment on posts
 - Responsive design
 
 ### Admin
-- Manage all users and posts
+- Manage posts
 - Moderate comments
 - Role-based access controls
 
