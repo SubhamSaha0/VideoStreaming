@@ -1,6 +1,6 @@
 # 📝 QuickBlog — MERN Blogging Platform
 
-QuickBlog is a full-stack, modern blogging platform that empowers users to create, publish, and manage blog posts with ease. With a beautiful, responsive interface and robust admin controls, QuickBlog demonstrates scalable architecture and a polished user experience—perfect for portfolios and showcasing technical expertise.
+QuickBlog is a full-stack, modern blogging platform that enables seamless creation, publication, and management of blog posts. With a polished, responsive interface and robust features, QuickBlog is ideal for demonstrating scalable architecture and clean code to recruiters.
 
 ## 🚀 Live Demo
 
@@ -21,42 +21,37 @@ QuickBlog is a full-stack, modern blogging platform that empowers users to creat
 ![image](https://github.com/user-attachments/assets/c1a409a1-0b7a-49a5-b37d-629500ae1ece)
 ![image](https://github.com/user-attachments/assets/bc5a48dd-5903-4951-84ac-2bbdfa9e63be)
 
-<!-- Add your screenshots here -->
-<!-- Example:
-![Home Page](https://your-screenshot-link.com/home.png)
-![Post Editor](https://your-screenshot-link.com/editor.png)
-![Admin Dashboard](https://your-screenshot-link.com/admin.png)
--->
-
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                |
-| ------------ | ------------------------ |
-| Frontend     | React.js, Tailwind CSS     |
-| Backend      | Node.js, Express.js      |
-| Database     | MongoDB (Mongoose)       |
-| Auth         | JWT Tokens               |
+| Layer        | Technology                   |
+| ------------ | --------------------------- |
+| Frontend     | React.js, CSS/Styled        |
+| Backend      | Node.js, Express.js         |
+| Database     | MongoDB (Mongoose)          |
+| Auth         | JWT Tokens                  |
 | Editor       | Rich Text Editor (Quill.js) |
-| Deployment   | Render.com  |
+| Deployment   | Render.com                  |
+| Media Upload | ImageKit                    |
+| AI Integration | Google Gemini API (optional) |
 
 ---
 
 ## ✨ Features
 
 ### User
-- Register and log in securely
-- Create, edit, and publish blog posts
-- Rich text editor for content creation
 - Browse and search posts by category 
-- Comment on posts
-- Responsive design
+- Comment and view comments on blogs
+- Responsive design for all devices
 
 ### Admin
-- Manage posts
-- Moderate comments
+- Secure login for content management
+- Create, edit, and publish blog posts
+- Manage comments in blog posts 
+- Rich text editor for writing and formatting
 - Role-based access controls
+- AI-powered content creation using Google Gemini API
 
 ---
 
@@ -68,7 +63,6 @@ QuickBlog is a full-stack, modern blogging platform that empowers users to creat
 ```
 
 ---
-
 ## ⚙️ Setup & Installation
 
 **1. Clone the repository**
@@ -81,19 +75,26 @@ cd QuickBlog
 ```bash
 cd backend
 npm install
-# Add a .env file with:
-# MONGO_URI=your_mongodb_connection_string
-# JWT_SECRET=your_jwt_secret
+# Create a .env file with the following variables:
+PORT=3000
+MONGODB_URI=your_mongodb_connection_string
+
+# Admin credentials
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+
+JWT_SECRET=your_jwt_secret
+
+# ImageKit (for media uploads)
+IMAGEKIT_URL_END_POINT=
+IMAGEKIT_PUBLIC_KEY=
+IMAGEKIT_PRIVATE_KEY=
+
+# Google Gemini API (for AI-powered content writing)
+GEMINI_API_KEY=your_gemini_api_key
+
 npm start
 ```
-
-**3. Frontend Setup**
-```bash
-cd ../frontend
-npm install
-npm run dev
-```
-
 ---
 
 ## 🧪 API Documentation
@@ -126,20 +127,6 @@ npm run dev
   _Body_: `{ postId, text }`
 - **DELETE** `/api/comments/:id`  
   Delete a comment (admin)
-
----
-
-> For authenticated/admin actions, pass the JWT token in the `token` header.
-
-## 🧑‍💻 Demo Credentials
-
-- **User:**  
-  Email: `test@demo.com`  
-  Password: `demopassword`
-
-- **Admin:**  
-  Email: `admin@demo.com`  
-  Password: `adminpassword`
 
 ---
 
