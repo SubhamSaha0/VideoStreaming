@@ -21,10 +21,10 @@ Tomato is a full-stack food ordering platform enabling customers to browse menus
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                 |
+| Layer        | Technology                |
 | ------------ | ------------------------- |
-| Frontend     | React.js, Vite, CSS       |
-| Admin Panel  | React.js, Vite, CSS       |
+| Frontend     | React.js, CSS             |
+| Admin Panel  | React.js, CSS             |
 | Backend      | Node.js, Express.js       |
 | Database     | MongoDB (Mongoose)        |
 | Auth         | JWT Tokens                |
@@ -96,9 +96,71 @@ npm run dev
 
 ## 🧪 API Documentation
 
-> _Document core REST API endpoints here, or link to Postman/Swagger collection if you have one._
+### Authentication
+- **POST** `/api/user/register`  
+  Register a new user  
+  _Body_: `{ name, email, password }`
+- **POST** `/api/user/login`  
+  User login, returns JWT token  
+  _Body_: `{ email, password }`
+
+### Food Menu
+- **GET** `/api/food/list`  
+  Get all available food items
+
+### Cart
+- **POST** `/api/cart/add`  
+  Add an item to the user's cart  
+  _Body_: `{ userId, itemId, quantity }`  
+  _Header_: `token`
+- **POST** `/api/cart/remove`  
+  Remove an item from cart  
+  _Body_: `{ userId, itemId }`  
+  _Header_: `token`
+- **POST** `/api/cart/get`  
+  Get all cart items for user  
+  _Body_: `{ userId }`  
+  _Header_: `token`
+
+### Orders
+- **POST** `/api/order/place`  
+  Place an order  
+  _Body_: `{ userId, items, amount, address }`  
+  _Header_: `token`
+- **POST** `/api/order/user-orders`  
+  Get user’s order history  
+  _Body_: `{ userId }`  
+  _Header_: `token`
+- **GET** `/api/order/list`  
+  Get all orders (admin only)  
+  _Header_: `token`
+- **POST** `/api/order/update-status`  
+  Update order status (admin)  
+  _Body_: `{ orderId, status }`  
+  _Header_: `token`
+
+### Admin Food Management
+- **POST** `/api/food/add`  
+  Add a new food item (admin)  
+  _Body_: `{ name, description, price, category, image }`  
+  _Header_: `token`
+- **POST** `/api/food/edit`  
+  Edit a food item (admin)  
+  _Body_: `{ _id, ...fields }`  
+  _Header_: `token`
+- **POST** `/api/food/delete`  
+  Delete a food item (admin)  
+  _Body_: `{ _id }`  
+  _Header_: `token`
+
+### Other
+- **GET** `/`  
+  Health check — returns “API working...”
 
 ---
+
+> For authenticated/admin actions, pass the JWT token in the `token` header.
+
 
 ## 🧑‍💻 Demo Credentials
 
