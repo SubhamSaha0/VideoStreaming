@@ -1,66 +1,58 @@
-# 🍅 Tomato — MERN Food Ordering Platform
+# 📝 QuickBlog — MERN Blogging Platform
 
-Tomato is a full-stack food ordering platform enabling customers to browse menus, order food, and track orders in real-time, while admins manage inventory and orders via a secure dashboard. Built with the modern MERN stack, Tomato demonstrates scalable, modular architecture and a polished user experience.
+QuickBlog is a full-stack, modern blogging platform that empowers users to create, publish, and manage blog posts with ease. With a beautiful, responsive interface and robust admin controls, QuickBlog demonstrates scalable architecture and a polished user experience—perfect for portfolios and showcasing technical expertise.
 
-## 🚀 Live Demos
+## 🚀 Live Demo
 
-- [Customer Frontend](https://tomato-frontend-urya.onrender.com)
-- [Admin Dashboard](https://tomato-admin-1lu2.onrender.com)
-- [Backend API](https://tomato-backend-8yug.onrender.com)
+- [Main Application](https://your-quickblog-demo-link.com) <!-- Replace with your actual demo link -->
 
 ---
 
 ## 🖼️ Screenshots
 
-### Customer
-![Customer Home](https://github.com/user-attachments/assets/494ed92c-5952-4232-8529-58d67bf3082e)
-![Customer explore menu](https://github.com/user-attachments/assets/c888dd86-3985-45fe-830c-adea9d229090)
-![Customer cart](https://github.com/user-attachments/assets/2e2788de-3c66-42c1-a100-156ed7e1601e)
-![Customer track orders](https://github.com/user-attachments/assets/36a74fa6-7781-4236-83e2-e36b01b69edd)
-
-### Admin
-![admin add item](https://github.com/user-attachments/assets/59ab1e3d-83a5-4ac6-93b1-fa14367d8f4d)
-![image](https://github.com/user-attachments/assets/7ce86467-6c87-4e15-9ba7-9dbfb77c7206)
-![Admin handle orders](https://github.com/user-attachments/assets/433dd502-ce1f-4488-aa1a-cba3a1f815ab)
-
+<!-- Add your screenshots here -->
+<!-- Example:
+![Home Page](https://your-screenshot-link.com/home.png)
+![Post Editor](https://your-screenshot-link.com/editor.png)
+![Admin Dashboard](https://your-screenshot-link.com/admin.png)
+-->
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer        | Technology                |
-| ------------ | ------------------------- |
-| Frontend     | React.js, CSS             |
-| Admin Panel  | React.js, CSS             |
-| Backend      | Node.js, Express.js       |
-| Database     | MongoDB (Mongoose)        |
-| Auth         | JWT Tokens                |
-| Deployment   | Render.com                |
+| ------------ | ------------------------ |
+| Frontend     | React.js, CSS/Styled     |
+| Backend      | Node.js, Express.js      |
+| Database     | MongoDB (Mongoose)       |
+| Auth         | JWT Tokens               |
+| Editor       | Rich Text Editor (Quill.js) |
+| Deployment   | Render.com  |
 
 ---
 
 ## ✨ Features
 
-### Customer
-- User registration & login
-- Browse menu by categories
-- Add items to cart
-- Secure checkout
-- Order history & status tracking
+### User
+- Register and log in securely
+- Create, edit, and publish blog posts
+- Rich text editor for content creation
+- Browse and search posts by category or author
+- Comment on and like posts
 - Responsive design
 
 ### Admin
-- Add, edit, delete food items
-- Manage orders and track statuses
-- Role-based access
+- Manage all users and posts
+- Moderate comments
+- Role-based access controls
 
 ---
 
 ## 🗂️ Folder Structure
 
 ```
-/frontend    # Customer React app
-/admin       # Admin dashboard React app
+/frontend    # React client app
 /backend     # Node/Express API server
 ```
 
@@ -70,8 +62,8 @@ Tomato is a full-stack food ordering platform enabling customers to browse menus
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/SubhamSaha0/Tomato.git
-cd Tomato
+git clone https://github.com/SubhamSaha0/QuickBlog.git
+cd QuickBlog
 ```
 
 **2. Backend Setup**
@@ -81,7 +73,6 @@ npm install
 # Add a .env file with:
 # MONGO_URI=your_mongodb_connection_string
 # JWT_SECRET=your_jwt_secret
-# CLOUDINARY_URL=your_cloudinary_url (optional)
 npm start
 ```
 
@@ -92,86 +83,46 @@ npm install
 npm run dev
 ```
 
-**4. Admin Panel Setup**
-```bash
-cd ../admin
-npm install
-npm run dev
-```
-
 ---
 
 ## 🧪 API Documentation
 
 ### Authentication
-- **POST** `/api/user/register`  
+- **POST** `/api/auth/register`  
   Register a new user  
   _Body_: `{ name, email, password }`
-- **POST** `/api/user/login`  
+- **POST** `/api/auth/login`  
   User login, returns JWT token  
   _Body_: `{ email, password }`
 
-### Food Menu
-- **GET** `/api/food/list`  
-  Get all available food items
-
-### Cart
-- **POST** `/api/cart/add`  
-  Add an item to the user's cart  
-  _Body_: `{ userId, itemId, quantity }`  
+### Posts
+- **GET** `/api/posts`  
+  Get all blog posts
+- **POST** `/api/posts`  
+  Create a new post (authenticated)  
+  _Body_: `{ title, content, category }`  
   _Header_: `token`
-- **POST** `/api/cart/remove`  
-  Remove an item from cart  
-  _Body_: `{ userId, itemId }`  
+- **PUT** `/api/posts/:id`  
+  Edit a post (author/admin)  
   _Header_: `token`
-- **POST** `/api/cart/get`  
-  Get all cart items for user  
-  _Body_: `{ userId }`  
+- **DELETE** `/api/posts/:id`  
+  Delete a post (author/admin)  
   _Header_: `token`
 
-### Orders
-- **POST** `/api/order/place`  
-  Place an order  
-  _Body_: `{ userId, items, amount, address }`  
-  _Header_: `token`
-- **POST** `/api/order/user-orders`  
-  Get user’s order history  
-  _Body_: `{ userId }`  
-  _Header_: `token`
-- **GET** `/api/order/list`  
-  Get all orders (admin only)  
-  _Header_: `token`
-- **POST** `/api/order/update-status`  
-  Update order status (admin)  
-  _Body_: `{ orderId, status }`  
-  _Header_: `token`
-
-### Admin Food Management
-- **POST** `/api/food/add`  
-  Add a new food item (admin)  
-  _Body_: `{ name, description, price, category, image }`  
-  _Header_: `token`
-- **POST** `/api/food/edit`  
-  Edit a food item (admin)  
-  _Body_: `{ _id, ...fields }`  
-  _Header_: `token`
-- **POST** `/api/food/delete`  
-  Delete a food item (admin)  
-  _Body_: `{ _id }`  
-  _Header_: `token`
-
-### Other
-- **GET** `/`  
-  Health check — returns “API working...”
+### Comments
+- **POST** `/api/comments`  
+  Add a comment to a post (authenticated)  
+  _Body_: `{ postId, text }`
+- **DELETE** `/api/comments/:id`  
+  Delete a comment (admin)
 
 ---
 
 > For authenticated/admin actions, pass the JWT token in the `token` header.
 
-
 ## 🧑‍💻 Demo Credentials
 
-- **Customer:**  
+- **User:**  
   Email: `test@demo.com`  
   Password: `demopassword`
 
