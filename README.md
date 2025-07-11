@@ -9,9 +9,9 @@ This repo is not intended to showcase production code or professional projects. 
 *Created for hands-on practice and experimentation.*
 
 
-# 🎬 Netflix-Clone — React + Firebase
+# 🎬 Netflix-Clone — React + Firebase + TMDB API
 
-Netflix-Clone is a modern, responsive web application that replicates the core UI and functionality of Netflix. Built as a demonstration project, it features user authentication, dynamic movie browsing, and a sleek, engaging interface. Perfect for showcasing modern React and Firebase integration.
+Netflix-Clone is a modern, responsive web application that replicates the core UI and movie browsing experience of Netflix. Built as a demonstration project, it features user authentication, dynamic movie lists powered by The Movie Database (TMDB) API, and a sleek, engaging interface. Perfect for showcasing modern React and Firebase integration.
 
 ## 🚀 Live Demo
 
@@ -31,19 +31,20 @@ Netflix-Clone is a modern, responsive web application that replicates the core U
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                                 |
-| ------------ | ------------------------------------------|
-| Frontend     | React.js, React Router, Vite, CSS         |
-| State/Auth   | Firebase, React Firebase Hooks             |
-| Notifications| react-hot-toast                           |
-| Dev Tools    | ESLint, Vite, React Hot Refresh           |
-| Deployment   | Render.com                                |
+| Layer         | Technology                                 |
+| ------------- | ------------------------------------------ |
+| Frontend      | React.js, React Router, Vite, CSS          |
+| State/Auth    | Firebase, React Firebase Hooks             |
+| API           | TMDB (The Movie DB) API                    |
+| Notifications | react-hot-toast                            |
+| Dev Tools     | ESLint, Vite, React Hot Refresh            |
+| Deployment    | Render.com                                 |
 
 ---
 
 ## ✨ Features
 
-- Browse trending and popular movies/shows
+- Browse trending and popular movies/shows (powered by TMDB API)
 - User authentication and account management (Firebase)
 - Add/remove from Favorites (if implemented)
 - Responsive UI inspired by Netflix
@@ -94,7 +95,14 @@ npm install
   };
   ```
 
-**4. Start the development server**
+**4. Get a TMDB API Key**
+- Register at [TMDB](https://www.themoviedb.org/) to get your API key.
+- Add it to your environment variables or in the config file as needed:
+  ```js
+  export const TMDB_API_KEY = "YOUR_TMDB_API_KEY";
+  ```
+
+**5. Start the development server**
 ```bash
 npm run dev
 ```
@@ -108,6 +116,7 @@ npm run dev
 - **react-router-dom**: Client-side routing
 - **react-hot-toast**: Toast notifications
 - **vite**: Fast development server and build tool
+- **TMDB API**: Source for movies and TV shows data
 
 ---
 
@@ -120,6 +129,12 @@ Contributions welcome! Please fork the repo, create a branch, and submit a pull 
 ## 📄 License
 
 MIT © Subham Saha
+
+---
+
+## 👤 Contact
+
+[LinkedIn](https://www.linkedin.com/in/subham-saha-277342202/) • [Email](mailto:subhamsaha2511@gmail.com)
 
 ---
 
